@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #7a7a7a;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.imagem-batman-home {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-top: 55px;
+    animation: transicao 3.5s infinite ease-in-out;
+}
+
+@keyframes transicao{
+    50%{
+        transform: translateY(-08%);
+    }
+}
+
+.imagem-batman-home:hover{
+    transition: transform 2.5s;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-left: 40px;
+}
+
+.nav.bar {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    right:20px;
+
+}
+
+.menu-icon {
+    font-size: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    color:#6b6a6a;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+.menu-icon:hover {
+    color: #edc30a;
+    transition: 0.4s linear;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 40px;
+
+}
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav-list ul li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #7a7a7a;
+    right: 20px;
+
+}
+
+.nav-link:hover{
+    color:rgb(228, 187, 3);
+}
+
+.botao-login-home a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.botao-login-home {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+
+.botao-login-home:hover {
+    background-color: #6b6a6a;
+    text-decoration: none;
+    border-radius: 10%;
+    color: rgb(234, 195, 0);
+    transition: 0.2s linear;
+}
+
+.imagem-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.imagem-batman-segurança {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.imagem-batman-arsenal {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    display: block;
+    background-attachment: fixed;
+}
+
+.imagem-batman-veiculos {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+@media  (min-width: 990px) {
+    .imagem-batman-veiculos {
+        height: 20rem;
+        width: 100%;
+        max-width: none;
+        padding: 0px;
+        margin: 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+.direitos {
+    display: flex;
+    margin-top: 600px;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+#login {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.email input {
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    color: rgb(228, 187, 3);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    font-size: 0, 9rem;
+
+}
+
+.senha input {
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    color: rgb(228, 187, 3);
+    margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    font-size: 0, 9rem;
+    
+
+}
+
+.entrar {
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #424242;
+    color: #ffff;
+    margin-top: 15px;
+}
+
+.entrar:hover {
+    background-color: rgb(228, 187, 3);
+    transition: 0.2s linear;
+    font-style: bold;
+    color: black;
+
+}
+
+input::placeholder {
+    color: #6b6a6a;
+}
+
+.caixa-login {
+    margin-top: 8%;
+    margin-bottom: 10%;
+    background-color: #2221216a;
+    max-width: 350px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.lista-veiculos {
+    margin: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 500px;
+}
+.lista-veiculos-h2:hover{
+    margin-top: 200px;
+    color: #edc30a;
+    transition: 0.6s linear;
+
+}
+
+.imagem-bat-submarine{
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.descricao-submarine{
+    height: 10px;
+    width: 30px;
+    font-size: 8px;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    
+}
+
+.carousel-indicators {
+    bottom: -30px; 
+}
+
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000; 
+}
+
+.carousel-item img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+}
+
+.carousel-inner{
+    padding-top: 80px;
+}
+
+.card-body {
+    background-color: #7a7a7a;
+    color:#000;
+    
+}
+
+p.card-text{
+    color: #000;
+}
+
+.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-toggler:hover{
+    color: #edc30a;
+    transition: 0.3s linear;
+
+}
+
+footer {
+    background-color: #464545;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px;
+}
+  
+.navbar-collapse {
+    justify-content: space-between;
+}
+  
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+  
+.navbar-nav li {
+    padding: 10px;
+}
+  
+.navbar-toggler {
+    padding: 5px 10px;
+}
+  
+@media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+    }
+  
+    .navbar-nav li {
+      text-align: center;
+      padding: 10px 0;
+    }
+}
+  
+
+.foto-logo-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: auto; 
+    
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.user-info-dash {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-dash {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.container-dash {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar-dash {
+    width: 250px;
+    background-color: #333;
+    padding: 20px;
+}
+
+.sidebar-dash ul {
+    list-style: none;
+}
+
+.sidebar-dash li {
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: #444;
+    color: #ddd;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.sidebar-dash li:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #1a1a1a;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.status-panel-dash, .security-report-dash, .equipment-arsenal-dash, .vehicles-dash, .security-cameras-dash {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.status-dash {
+    display: flex;
+    gap: 10px;
+}
+
+.status-item-dash {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.chart-dash {
+    
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.equipment-arsenal-dash ul,
+.vehicles-dash ul {
+    list-style: none;
+    color: #ddd;
+}
+
+.equipment-arsenal-dash li,
+.vehicles-dash li {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+
+.map {
+    background-color: #333;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #666;
+    font-size: 14px;
+    border-top: 2px solid #333;
+}
+
+.chart-dash img {
+    
+    width: 300px; 
+    height: 150px;
+    display: block;
+   
+}
+
+.status-panel-dash img{
+    width: 270px; 
+    height: 150px;
+    display: block;
+}
+
+.sidebar-dash h2 {
+    margin: 30px;
+}

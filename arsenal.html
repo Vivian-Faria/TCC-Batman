@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal de Armas</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Adicione esse código ao início de cada página HTML restrita -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const userRole = localStorage.getItem("userRole");
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Páginas permitidas para cada tipo de usuário
+        const pagesByRole = {
+            master: ["home.html", "dash.html", "arsenal.html", "veiculos.html", "secret.html", "gerenciamento.html"],
+            operador: ["home-operador.html", "dash.html", "veiculos.html"]
+        };
+
+        // Verifica se o usuário tem permissão para acessar a página
+        if (!userRole || !pagesByRole[userRole]?.includes(currentPage)) {
+            alert("Você não tem permissão para acessar esta página.");
+            const redirectPage = userRole === "master" ? "home.html" : "home-operador.html";
+            window.location.href = redirectPage;
+        }
+    });
+</script>
+
+    <header>
+        <nav class="bar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-list"
+                    aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+                <div class="collapse navbar-collapse" id="nav-list">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="dash.html" class="nav-link">Dashboard</a></li>
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="veiculos.html" class="nav-link">Veículos</a></li>
+                        <li class="nav-item"><a href="arsenal.html" class="nav-link">Arsenal</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="secret.html" class="nav-link">Secret</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-4">
+        <h2>Gestão de Arsenal de Armas</h2>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4>Adicionar Novo Equipamento</h4>
+                <div class="mb-3">
+                    <input type="text" id="weaponName" placeholder="Nome da Arma" class="form-control mb-2">
+                    <input type="text" id="ammoType" placeholder="Tipo de Munição" class="form-control mb-2">
+                    <input type="number" id="quantity" placeholder="Quantidade" class="form-control mb-2">
+                    <input type="text" id="status" placeholder="Integridade (%)" class="form-control mb-2">
+                    <button onclick="addWeapon()" class="btn btn-primary">Adicionar Arma</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped table-dark table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Nome da Arma</th>
+                    <th scope="col">Tipo de Munição</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Integridade</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable"></tbody>
+        </table>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; Copyright © 2010-2024 VF dev quality - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script>
+        let weapons = [];
+
+        function renderWeapons() {
+            const inventoryTable = document.getElementById("inventoryTable");
+            inventoryTable.innerHTML = ""; 
+
+            weapons.forEach((weapon, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${weapon.name}</td>
+                    <td>${weapon.ammoType}</td>
+                    <td>${weapon.quantity}</td>
+                    <td>${weapon.status}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="updateWeapon(${index})">Atualizar</button>
+                        <button class="btn btn-danger btn-sm" onclick="removeWeapon(${index})">Remover</button>
+                    </td>
+                `;
+                inventoryTable.appendChild(row);
+            });
+        }
+
+        function addWeapon() {
+            const name = document.getElementById("weaponName").value;
+            const ammoType = document.getElementById("ammoType").value;
+            const quantity = document.getElementById("quantity").value;
+            const status = document.getElementById("status").value;
+
+            if (name && ammoType && quantity && status) {
+                const newWeapon = { name, ammoType, quantity, status };
+                weapons.push(newWeapon);
+                renderWeapons();
+
+                document.getElementById("weaponName").value = "";
+                document.getElementById("ammoType").value = "";
+                document.getElementById("quantity").value = "";
+                document.getElementById("status").value = "";
+            } else {
+                alert("Preencha todos os campos!");
+            }
+        }
+
+        function updateWeapon(index) {
+            const weapon = weapons[index];
+            const name = prompt("Novo nome da arma:", weapon.name);
+            const ammoType = prompt("Novo tipo de munição:", weapon.ammoType);
+            const quantity = prompt("Nova quantidade:", weapon.quantity);
+            const status = prompt("Novo status de integridade:", weapon.status);
+
+            if (name && ammoType && quantity && status) {
+                weapons[index] = { name, ammoType, quantity, status };
+                renderWeapons();
+            } else {
+                alert("Todos os campos devem ser preenchidos!");
+            }
+        }
+
+        function removeWeapon(index) {
+            weapons.splice(index, 1); 
+            renderWeapons(); 
+        }
+
+        renderWeapons();
+    </script>
+</body>
+</html>

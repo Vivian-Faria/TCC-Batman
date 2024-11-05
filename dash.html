@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Dashboard do Batman</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="bar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#nav-list"
+                    aria-controls="nav-list" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    ☰
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav-list">
+                    <ul class="navbar-nav">
+                        
+                        <li class="nav-item"><a href="dash.html"
+                                class="nav-link">Dashboard</a></li>
+                        <li class="nav-item"><a href="home.html"
+                                class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="veiculos.html"
+                                class="nav-link">Veículos</a></li>
+                        <li class="nav-item"><a href="arsenal.html"
+                                class="nav-link">Arsenal</a></li>
+                        <li class="nav-item"><a href="index.html"
+                                class="nav-link">Login</a></li>
+                        <li class="nav-item"><a href="secret.html"
+                                class="nav-link">Secret</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-dash">
+            <nav class="sidebar-dash">
+                <h2>Avisos!</h2>
+                <ul>
+                    <li>Equipamentos disponíveis para uso</li>
+                    <li>Abasteça os automíveis</li>
+                    <li>Armamento já disponível para uso</li>
+                </ul>
+            </nav>
+
+            <main>
+                <section class="status-panel-dash">
+                    <h2>Status Geral</h2>
+                    <p>Indústria Funcionando corretamente!</p>
+                    <div class="status-dash">
+                        <div class="chart-dash">
+                            <img src="assets.img/gif dash2.gif" alt="Gráfico de digital">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="security-report-dash">
+                    <h2>Relatório de danos físicos</h2>
+                    <p>Avaliando danos físicos e aplicando correções</p>
+                    <div class="chart-dash">
+                        <img src="assets.img/gif int.gif" alt="Gráfico de Ocorrências">
+                    </div>
+                </section>
+
+                <section class="equipment-arsenal-dash">
+                    <h2>Equipamentos e Arsenal</h2>
+                    <p>Avaliando integridade física do armamento</p>
+                    <div class="chart-dash">
+                        <img src="assets.img/armas gif.gif" alt="Gráfico de segurança">
+                </section>
+
+                <section class="vehicles-dash">
+                    <h2>Atividades suspeitas</h2>
+                    <p>Monitoramento de alertas e chamados</p>
+                    <div class="chart-dash">
+                        <img src="assets.img/mundi.gif" alt="Gráfico de segurança">
+                </section>
+
+                <section class="security-cameras-dash">
+                    <h2>Câmeras de Segurança</h2>
+                    <p>Monitoramento em tempo real: 5 câmeras ativas</p>
+                    <div class="chart-dash">
+                        <img src="assets.img/seguranca gif.gif" alt="Gráfico de segurança">
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Wayne Enterprises. Todos os direitos reservados.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
